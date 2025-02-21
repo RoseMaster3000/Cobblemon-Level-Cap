@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "just_catch_level_cap",
+  "version": "${version}",
+  "name": "Just Catch Level Cap Mod",
+  "description": "A simple mod to prevent catching Pokemon too far above your party's level.",
+  "authors": [
+    "Flandre923"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+  "license": "MIT",
+  "icon": "assets/just_catch_level_cap/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.flandre923.fabric.JustCatchLevelCapFabric"
+    ],
+    "client": [
+      "com.flandre923.fabric.client.JustCatchLevelCapFabricClient"
+    ]
+  },
+  "mixins": [
+    "just_catch_level_cap.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.10",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "architectury": ">=13.0.8",
+    "fabric-api": "*",
+    "cobblemon": ">=1.6.1"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

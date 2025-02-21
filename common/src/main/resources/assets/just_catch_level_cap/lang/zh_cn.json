@@ -1,0 +1,9 @@
+{
+  "catchlevelcap.fail_message": "它似乎太强大了，无法被捕捉……",
+  "catchlevelcap.fail_message_external": "精灵球弹开了……先试着战斗一下？",
+  "catchlevelcap.fail_message_battle": "精灵球没有任何效果……",
+
+  "gamerule.levelCap": "战斗中等级上限",
+  "gamerule.externalLevelCap": "战斗外等级上限",
+  "gamerule.showLevelCapMessages": "显示等级上限提示"
+}

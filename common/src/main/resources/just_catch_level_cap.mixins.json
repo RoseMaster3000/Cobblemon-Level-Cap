@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "com.flandre923.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
+  "client": [
+  ],
+  "mixins": [
+    "EmptyPokeBallMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

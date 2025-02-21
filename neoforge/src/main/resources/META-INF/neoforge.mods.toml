@@ -1,0 +1,45 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+#issueTrackerURL = ""
+license = "MIT"
+
+[[mods]]
+modId = "just_catch_level_cap"
+version = "${version}"
+displayName = "Just Catch Level Cap Mod"
+authors = "Flandre923"
+description = '''
+A simple mod to prevent catching Pokemon too far above your party's level.
+'''
+#logoFile = ""
+
+[[dependencies.just_catch_level_cap]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.just_catch_level_cap]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.just_catch_level_cap]]
+modId = "architectury"
+type = "required"
+versionRange = "[13.0.8,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[mixins]]
+config = "just_catch_level_cap.mixins.json"
+
+[[dependencies.just_catch_level_cap]]
+modId = "cobblemon"
+mandatory = true
+versionRange = "[1.6.1,)"
+ordering = "NONE"
+side = "BOTH"
