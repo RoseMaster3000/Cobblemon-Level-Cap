@@ -9,14 +9,10 @@ public final class JustCatchLevelCap {
 
 
     public static final GameRules.Key<GameRules.IntRule> LEVEL_CAP;
-    public static final GameRules.Key<GameRules.IntRule> EXTERNAL_LEVEL_CAP;
     public static final GameRules.Key<GameRules.BooleanRule> SHOW_LEVEL_CAP_MESSAGES;
-    // 修改游戏规则的描述，使其基于道馆数量
-
 
     static {
-        LEVEL_CAP = registerIntRule("levelCap", GameRules.Category.MISC, 5);
-        EXTERNAL_LEVEL_CAP = registerIntRule("externalLevelCap", GameRules.Category.MISC, 5);
+        LEVEL_CAP = registerIntRule("levelCap", GameRules.Category.MISC, 20);
         SHOW_LEVEL_CAP_MESSAGES = registerBooleanRule("showLevelCapMessages", GameRules.Category.MISC, true);
     }
 

@@ -6,7 +6,8 @@
   "client": [
   ],
   "mixins": [
-    "EmptyPokeBallMixin"
+    "EmptyPokeBallMixin",
+    "PokemonMixin"
   ],
   "injectors": {
     "defaultRequire": 1

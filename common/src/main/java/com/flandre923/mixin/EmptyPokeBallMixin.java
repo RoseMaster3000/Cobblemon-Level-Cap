@@ -24,7 +24,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import static com.flandre923.JustCatchLevelCap.LEVEL_CAP;
-import static com.flandre923.JustCatchLevelCap.EXTERNAL_LEVEL_CAP;
 import static com.flandre923.JustCatchLevelCap.SHOW_LEVEL_CAP_MESSAGES;
 
 
@@ -56,7 +55,7 @@ public abstract class EmptyPokeBallMixin {
 
                 GameRules gamerules = self.getWorld().getGameRules();
                 int levelCap = gamerules.getInt(LEVEL_CAP);
-                int externalLevelCap = gamerules.getInt(EXTERNAL_LEVEL_CAP);
+                int externalLevelCap = gamerules.getInt(LEVEL_CAP);
                 boolean showMessages = gamerules.getBoolean(SHOW_LEVEL_CAP_MESSAGES);
 
 
