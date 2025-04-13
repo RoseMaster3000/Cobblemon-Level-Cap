@@ -50,31 +50,24 @@ public abstract class EmptyPokeBallMixin {
 
             if (!player.isCreative() && !self.getPokeBall().getCatchRateModifier().isGuaranteed() && !capturingPokemon.getPokemon().getShiny()) {
 
-                int playerLevel = catchlevelcap$getHighestPartyLevel(player);
                 int targetLevel = capturingPokemon.getPokemon().getLevel();
 
                 GameRules gamerules = self.getWorld().getGameRules();
                 int levelCap = gamerules.getInt(LEVEL_CAP);
-                int externalLevelCap = gamerules.getInt(LEVEL_CAP);
                 boolean showMessages = gamerules.getBoolean(SHOW_LEVEL_CAP_MESSAGES);
 
 
                 if (!capturingPokemon.isBattling()) {
-                    if(targetLevel > playerLevel + externalLevelCap) {
+                    if(targetLevel > levelCap) {
                         if (showMessages) {
-                            if (externalLevelCap < levelCap && targetLevel < playerLevel + levelCap) {
-                                player.sendMessage(Text.translatableWithFallback("catchlevelcap.fail_message_external", "The ball bounced off... try battling first?").formatted(Formatting.RED), true);
-                            } else {
-                                player.sendMessage(Text.translatableWithFallback("catchlevelcap.fail_message", "It seems too strong to be caught...").formatted(Formatting.RED), true);
-                            }
-
+                            player.sendMessage(Text.translatableWithFallback("catchlevelcap.fail_message", "It seems too strong to be caught...").formatted(Formatting.RED), true);
                         }
 
                         WorldExtensionsKt.playSoundServer(self.getWorld(), self.getPos(), SoundEvents.ENTITY_ITEM_BREAK, SoundCategory.NEUTRAL, 0.8F, 1F);
                         drop();
                         ci.cancel();
                     }
-                } else if (targetLevel > playerLevel + levelCap) {
+                } else if(targetLevel > levelCap) {
                     PokemonBattle battle = PlayerExtensionsKt.getBattleState(player).component1();
 
                     ActiveBattlePokemon hitBattlePokemon = null;
@@ -108,16 +101,6 @@ public abstract class EmptyPokeBallMixin {
                 }
             }
         }
-//        EmptyPokeBallEntity self = (EmptyPokeBallEntity) (Object) this;
-//
-//        if (self.getOwner() instanceof ServerPlayerEntity player) {
-//            // 调用 LevelCapHelper.applyLevelCapCheck 并接收返回值
-//            boolean shouldDrop = LevelCapHelper.applyLevelCapCheck(self, player, capturingPokemon, ci);
-//            if (shouldDrop) {
-//                // 如果 LevelCapHelper 指示应该掉落，则调用 self.drop()
-//                this.drop(); // 使用 this.drop() 或 self.drop() 都可以，因为在 Mixin 中 'this' 和 'self' 都指向 EmptyPokeBallEntity 实例
-//            }
-//        }
     }
 
     @Unique

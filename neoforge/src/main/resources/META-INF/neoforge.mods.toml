@@ -7,9 +7,9 @@ license = "MIT"
 modId = "just_catch_level_cap"
 version = "${version}"
 displayName = "Just Catch Level Cap Mod"
-authors = "Flandre923"
+authors = ["Flandre923", "RoseMaster3000"]
 description = '''
-A simple mod to prevent catching Pokemon too far above your party's level.
+"A mod which enforces a server wide level cap for catching and training Pokemon."
 '''
 #logoFile = ""
 

@@ -2,14 +2,15 @@
   "schemaVersion": 1,
   "id": "just_catch_level_cap",
   "version": "${version}",
-  "name": "Just Catch Level Cap Mod",
-  "description": "A simple mod to prevent catching Pokemon too far above your party's level.",
+  "name": "Cobblemon Level Cap",
+  "description": "A mod which enforces a server wide level cap for catching and training Pokemon.",
   "authors": [
-    "Flandre923"
+    "Flandre923",
+    "RoseMaster3000"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/RoseMaster3000/Cobblemon-Level-Cap"
   },
   "license": "MIT",
   "icon": "assets/just_catch_level_cap/icon.png",

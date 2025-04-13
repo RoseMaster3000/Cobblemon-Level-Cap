@@ -20,7 +20,6 @@ import java.util.Set;         // Required for Set type
 
 @Mixin(Pokemon.class)
 public abstract class PokemonMixin {
-
     /**
      * Mixin for the version of addExperience that includes a player context.
      * Checks level cap before adding XP.
@@ -42,7 +41,7 @@ public abstract class PokemonMixin {
         if (!world.isClient()) {
             GameRules gameRules = world.getGameRules();
             int levelCap = gameRules.getInt(JustCatchLevelCap.LEVEL_CAP);
-            int currentLevel = this.level;
+            int currentLevel = self.getLevel();
 
             if (currentLevel >= levelCap) {
                 // Construct the AddExperienceResult correctly representing no change
@@ -64,7 +63,8 @@ public abstract class PokemonMixin {
     @Inject(
             method = "addExperience(Lcom/cobblemon/mod/common/api/pokemon/experience/ExperienceSource;I)Lcom/cobblemon/mod/common/pokemon/AddExperienceResult;",
             at = @At("HEAD"),
-            cancellable = true
+            cancellable = true,
+            remap = false // Add this ONLY for testing in deobfuscated dev env
     )
     private void preventXpGainAtCapNoPlayer(
             ExperienceSource source,
@@ -80,7 +80,7 @@ public abstract class PokemonMixin {
             if (!world.isClient()) {
                 GameRules gameRules = world.getGameRules();
                 int levelCap = gameRules.getInt(JustCatchLevelCap.LEVEL_CAP);
-                int currentLevel = this.level;
+                int currentLevel = self.getLevel();
 
                 if (currentLevel >= levelCap) {
                     // Construct the AddExperienceResult correctly representing no change
