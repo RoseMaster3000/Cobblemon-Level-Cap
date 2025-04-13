@@ -64,7 +64,7 @@ public abstract class PokemonMixin {
             method = "addExperience(Lcom/cobblemon/mod/common/api/pokemon/experience/ExperienceSource;I)Lcom/cobblemon/mod/common/pokemon/AddExperienceResult;",
             at = @At("HEAD"),
             cancellable = true,
-            remap = false // Add this ONLY for testing in deobfuscated dev env
+            remap = false // Add this ONLY for testing in deobfuscated dev env .... have to just go with it for now...
     )
     private void preventXpGainAtCapNoPlayer(
             ExperienceSource source,
