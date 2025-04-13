@@ -48,7 +48,7 @@ public abstract class EmptyPokeBallMixin {
 
         if (self.getOwner() instanceof ServerPlayerEntity player) {
 
-            if (!player.isCreative() && !self.getPokeBall().getCatchRateModifier().isGuaranteed() && !capturingPokemon.getPokemon().getShiny()) {
+            if (!player.isCreative()) {
 
                 int targetLevel = capturingPokemon.getPokemon().getLevel();
 
